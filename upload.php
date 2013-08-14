@@ -1,4 +1,4 @@
-<?
+<?php
 require_once('db.inc.php');
 #$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql='insert into evesupport.mysales (stationid,regionid,systemid,typeid,bid,price,minvolume,volremain,volenter,issued,duration,rang) values (:stationid,:regionid,:systemid,:typeid,:bid,:price,:minvolume,:volremain,:volenter,str_to_date(:issued,"%Y-%m-%dT%H:%i:%s"),:duration,:rang) on duplicate key update volremain=:volremain,issued=str_to_date(:issued,"%Y-%m-%dT%H:%i:%s")';
