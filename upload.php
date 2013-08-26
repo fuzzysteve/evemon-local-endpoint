@@ -6,7 +6,7 @@ require_once('db.inc.php');
 #EVE time is UTC, and that's what EVE Mon sends us. (strtotime doesn't need this, but it stops errors)
 date_default_timezone_set('UTC');
 $sql='insert into mysales (stationid,regionid,systemid,typeid,bid,price,minvolume,volremain,volenter,issued,duration,rang) values (:stationid,:regionid,:systemid,:typeid,:bid,:price,:minvolume,:volremain,:volenter,:issued,:duration,:rang)';
-$histsql="insert ignore into orderhistory (typeid,regionid,historydate,orders,quantity,low,high,average) values (:typeid,:regionid,:date,:orders,:quantity,:low,:high,:average)";
+$histsql="insert into orderhistory (typeid,regionid,historydate,orders,quantity,low,high,average) values (:typeid,:regionid,:date,:orders,:quantity,:low,:high,:average)";
 $stmt = $dbh->prepare($sql);
 #trigger_error(print_r($stmt, true));
 $histstmt = $dbh->prepare($histsql);
